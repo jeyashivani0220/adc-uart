@@ -8,7 +8,7 @@ int main(void){
 	while(1){
 		ADC_StartGroupConversion(&adc_pal_1_instance,0U);
 		int AdcStatus=adc_pal_1_results0[0];
-		int v =(AdcStatus*3300U/4095U);
+		int v =(AdcStatus*4500U/4095U);
 		//int final=3300-(int)v;
 		static char txBuff[64];
 		int len=(int)sprintf(txBuff,"Register value: %d  Voltage value: %d mV \n\r",AdcStatus,v);
