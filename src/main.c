@@ -10,6 +10,7 @@ int main(void){
 		int AdcStatus=adc_pal_1_results0[0];
 		int v =(AdcStatus*4500U/4095U);
 		//int final=3300-(int)v;
+		int a;
 		static char txBuff[64];
 		int len=(int)sprintf(txBuff,"Register value: %d  Voltage value: %d mV \n\r",AdcStatus,v);
 		LPUART_DRV_SendDataBlocking(INST_LPUART_1,(const uint8_t*)txBuff,(uint32_t)len,1000U);
